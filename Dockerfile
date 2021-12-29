@@ -1,7 +1,5 @@
 FROM ubuntu:20.04
-MAINTAINER Gregor von Laszewski <laszewski@gmail.com>
-# add george
-
+LABEL maintainer="Gregor von Laszewski <laszewski@gmail.com>" maintainer="George K. Thiruvathukal <gkt@cs.luc.edu>"
 
 ENV DEBIAN_FRONTEND noninteractive
 
