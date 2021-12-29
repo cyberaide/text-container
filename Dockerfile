@@ -110,11 +110,11 @@ RUN unset DEBIAN_FRONTEND
 ####################################################################################
 #
 # BibTool
-RUN apt install bibtool
+RUN apt install -y bibtool
 
 ####################################################################################
 # INSTALL BIBER
-RUN apt-get -y install biber
+RUN apt-get install -y biber
 
 ####################################################################################
 # INSTALL GRAPHVIZ
@@ -146,14 +146,14 @@ RUN pip install pandoc-xnos
 # INSTALL jq and yq query processing
 #
 
-RUN apt install jq
+RUN apt install -y jq
 RUN pip install yq
 
 
 ####################################################################################
 # INSTALL GO
 #
-RUN sudo apt install golang
+RUN apt install -y golang
 
 ####################################################################################
 # INSTALL HUGO
@@ -164,7 +164,7 @@ RUN sudo apt install golang
 
 ####################################################################################
 # INSTALL SPHINX
-RUN apt-get install python3-sphinx
+RUN apt-get install -y python3-sphinx
 
 ## RUN pip install -U sphinx
 
@@ -179,15 +179,15 @@ RUN pip install pygments
 # INSTALL BOOKMANAGER
 # Hey, how come you didn't set up PyPI for Bookmanager yet? Let me know if I can help with that... :-)
 
-RUN git clone https://github.com/cyberaide/bookmanager.git
-WORKDIR /usr/local/code/bookmanager
-RUN pip install -e .
+# RUN git clone https://github.com/cyberaide/bookmanager.git
+# WORKDIR /usr/local/code/bookmanager
+# RUN pip install -e .
 
 ####################################################################################
 # INSTALL PDF and eBook Tools - poppler, Calibre latest
 
-RUN pip install poppler
-RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+# RUN pip install python-poppler
+# RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 
 
 ####################################################################################
