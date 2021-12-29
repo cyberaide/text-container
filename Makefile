@@ -8,7 +8,7 @@ CM=$(shell dirname `pwd`)
 #--no-cache=true
 
 image:
-	docker build  -t cyberaide/text:${VERSION} -t cyberaide/text:latest .
+	time docker build  -t cyberaide/text:${VERSION} -t cyberaide/text:latest .
 
 #
 # cm munts all parent directories into the container
@@ -36,3 +36,6 @@ push:
 
 run:
 	docker run cyberaide/text:${VERSION} /bin/sh -c "pwd"
+
+clean:
+	echo "TBD"
