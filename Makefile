@@ -35,4 +35,4 @@ push:
 	docker push cyberaide/text:latest
 
 run:
-	docker run cyberaide/text:${VERSION} /bin/sh -c "cd books/book/cloud; git pull; make"
+	docker run cyberaide/text:${VERSION} /bin/sh -c "pwd"
