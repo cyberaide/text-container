@@ -90,11 +90,10 @@ RUN apt-get install -y \
 
 ####################################################################################
 # INSTALL APT PYTHON 3.10
-RUN apt update
-RUN apt install software-properties-common
+RUN apt install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt install python3.10
-RUN apt install python3-pip
+RUN apt install -y python3.10
+RUN apt install -y python3-pip
     
 ####################################################################################
 # INSTALL LATEX, BIBTEX, this should aso have biblatex (check needed)
