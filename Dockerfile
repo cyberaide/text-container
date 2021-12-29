@@ -181,13 +181,10 @@ RUN pip install poppler
 RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 
 
+####################################################################################
+# INSTALL zettelgeist
 
-
-
-
-# This is just for grins, but I have my own minimalist notetaking tool, ZettelGeist:
-
-#    pip install zettelgeist
+RUN pip install zettelgeist
 
 
 # WOULD BE COOL
