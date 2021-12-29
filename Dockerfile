@@ -1,3 +1,11 @@
+FROM ubuntu:20.04
+MAINTAINER Gregor von Laszewski <laszewski@gmail.com>
+# add george
+
+
+ENV DEBIAN_FRONTEND noninteractive
+
+
 #Ultimate text management dockerfile
 
 #OS 20.04
@@ -27,6 +35,7 @@
 ####################################################################################
 # SYSTEM TOOLS
 #
+RUN apt-get update
 RUN apt-get install -y \
     git \
     git-core \
