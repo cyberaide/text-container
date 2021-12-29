@@ -31,11 +31,15 @@ dockerclean:
 	-docker rmi $$(docker images -q) --force
 
 push:
-	docker push cyberaide/text:0.2.36
+	docker push cyberaide/text:${VERSION}
 	docker push cyberaide/text:latest
 
 run:
 	docker run cyberaide/text:${VERSION} /bin/sh -c "pwd"
+
+hugo:
+	docker run cyberaide/text:${VERSION} /bin/sh -c "hugo --minify" 
+
 
 clean:
 	echo "TBD"

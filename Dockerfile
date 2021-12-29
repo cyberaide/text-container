@@ -153,7 +153,7 @@ RUN pip install yq
 ####################################################################################
 # INSTALL GO
 #
-RUN apt install -y golang
+# RUN apt install -y golang
 
 ####################################################################################
 # INSTALL HUGO
@@ -210,8 +210,27 @@ RUN pip install zettelgeist
 #    ./doc-setup.py --hugo --theme=docsy sitename
 #    ./doc-setup.py --latex --theme=acm document.tex
 #    ./doc-setup.py --sphinx sitename
-#The way this works we ut this on pypi than internally it set up the docker image and calls the appropriate thing, so no one has to remember the docker commands ...
+# The way this works we ut this on pypi than internally it set
+# up the docker image and calls the appropriate thing, so no one has to remember the docker commands ...
 
 
 
+# Install NodeJS and tooling
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+ && apt install -y nodejs \
+ && npm install -g autoprefixer@10.2.4 postcss@8.2.6 postcss-cli@8.3.1 yarn@1.22.10 @babel/cli @babel/core
+
+RUN wget https://go.dev/dl/go1.17.5.linux-amd64.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+
+ENV PATH="/usr/local/go/bin:${PATH}"
+
+WORKDIR /usr/local/code
+RUN git clone https://github.com/gohugoio/hugo.git
+WORKDIR /usr/local/code/hugo
+RUN go install --tags extended
+
+ENV PATH="/root/go/bin:${PATH}"
+
+WORKDIR /root
 
