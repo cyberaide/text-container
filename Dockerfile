@@ -46,7 +46,7 @@ RUN apt-get install -y \
 ####################################################################################
 # INSTALL EMACS
 #
-RUN apt-get emacs-nox
+RUN apt-get install -y emacs-nox
 
 ####################################################################################
 # DEVELOPMENT TOOLS
@@ -69,8 +69,9 @@ RUN apt-get install -y \
     libz-dev \ 
     tk-dev \
     libsqlite3-dev \
-    libreadline-dev \
     liblzma-dev
+
+#    libreadline-dev \
     
 # we may not need tk
 
